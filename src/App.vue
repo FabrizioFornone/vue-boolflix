@@ -20,13 +20,17 @@ export default {
   },
   methods: {
     callApi(keyword) {
-      axios
-        .get(
-          `https://api.themoviedb.org/3/search/movie/?api_key=fbf42efdae098c0577337b304561e7e9&query=${keyword}`
-        )
-        .then((response) => {
-          this.moviesFound = response.data.results;
-        });
+      if (keyword === "") {
+        this.moviesFound = [];
+      } else {
+        axios
+          .get(
+            `https://api.themoviedb.org/3/search/movie/?api_key=fbf42efdae098c0577337b304561e7e9&query=${keyword}`
+          )
+          .then((response) => {
+            this.moviesFound = response.data.results;
+          });
+      }
     },
   },
 };
