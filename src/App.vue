@@ -22,6 +22,7 @@ export default {
     callApi(keyword) {
       if (keyword === "") {
         this.moviesFound = [];
+        alert('Non hai cercato nulla!')
       } else {
         axios
           .get(
