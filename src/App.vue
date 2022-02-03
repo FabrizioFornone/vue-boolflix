@@ -21,7 +21,7 @@ export default {
   methods: {
     callApis(keyword) {
       if (keyword === "") {
-        this.moviesFound = [];
+        this.sumResults = [];
       } else {
         this.sumResults = [];
         let multiAxios = [

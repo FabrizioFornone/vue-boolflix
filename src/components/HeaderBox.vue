@@ -1,7 +1,8 @@
 <template>
   <header>
-    <div class="d-flex justify-content-between align-items-center pt-3 pb-2">
-      <h2 class="text-uppercase mx-4">boolflix</h2>
+    <div class="d-flex justify-content-between align-items-center py-3">
+      <!-- img by bealabea ;) -->
+      <img class="mx-4" src="@/assets/img/boolflix.png" alt="" />
       <div>
         <input
           id="search-input"
