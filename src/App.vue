@@ -19,6 +19,26 @@ export default {
     };
   },
   methods: {
+    destructuringAndPush(arrayToDestructured, recipientArray) {
+      const [array1, array2] = arrayToDestructured;
+      array1.forEach((element) => {
+        recipientArray.push(element);
+      });
+      array2.forEach((element) => {
+        recipientArray.push(element);
+      });
+    },
+    shuffleResult(arrayToShuffle) {
+      for (let i = arrayToShuffle.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+
+        const temp = arrayToShuffle[i];
+        arrayToShuffle[i] = arrayToShuffle[j];
+        arrayToShuffle[j] = temp;
+      }
+
+      return arrayToShuffle;
+    },
     callApis(keyword) {
       if (keyword === "") {
         this.sumResults = [];
@@ -39,26 +59,6 @@ export default {
           })
         );
       }
-    },
-    destructuringAndPush(arrayToDestructured, recipientArray) {
-      const [array1, array2] = arrayToDestructured;
-      array1.forEach((element) => {
-        recipientArray.push(element);
-      });
-      array2.forEach((element) => {
-        recipientArray.push(element);
-      });
-    },
-    shuffleResult(arrayToShuffle) {
-      for (let i = arrayToShuffle.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-
-        const temp = arrayToShuffle[i];
-        arrayToShuffle[i] = arrayToShuffle[j];
-        arrayToShuffle[j] = temp;
-      }
-
-      return arrayToShuffle;
     },
   },
 };
