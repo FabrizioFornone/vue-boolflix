@@ -1,6 +1,7 @@
 @import "~bootstrap/scss/bootstrap.scss";
+@import "@/style/variabiles.scss";
 
 a {
-    text-decoration: none;
-    color: #000;
+  text-decoration: none;
+  color: $black-color;
 }

@@ -1,5 +1,7 @@
+@import "@/style/variabiles.scss";
+
 main {
-  background-color: #ccc;
+  background-color: $grey-color;
   min-height: calc(100vh - 71px);
   font-size: 14px;
 
@@ -12,8 +14,8 @@ main {
       display: block;
     }
     .hover-div {
-      color: #f4f4f4;
-      background-color: slategray;
+      color: $whitesmoke-color;
+      background-color: $slategray-color;
       position: absolute;
       height: 100%;
       overflow-y: hidden;
