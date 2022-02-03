@@ -5,6 +5,7 @@
         <div><strong>Titolo:</strong> {{ card.title }}</div>
         <div><strong>Titolo originale:</strong> {{ card.original_title }}</div>
         <div><strong>Voto:</strong> {{ card.vote_average }}</div>
+        <div><strong>Lingua:</strong> {{ card.original_language }}</div>
         <div><strong>Overview:</strong> {{ card.overview }}</div>
       </div>
       <a href="#">
