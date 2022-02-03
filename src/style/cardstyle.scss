@@ -1,0 +1,24 @@
+@import "@/style/variabiles.scss";
+
+.movie {
+  height: 300px;
+  position: relative;
+  cursor: pointer;
+
+  &:hover .hover-div {
+    display: block;
+  }
+  .hover-div {
+    color: $whitesmoke-color;
+    background-color: $slategray-color;
+    position: absolute;
+    height: 100%;
+    overflow-y: hidden;
+    display: none;
+  }
+  img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+  }
+}
