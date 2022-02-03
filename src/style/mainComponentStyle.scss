@@ -3,5 +3,5 @@
 main {
   background-color: $grey-color;
   min-height: calc(100vh - 71px);
-  font-size: 14px;
+  font-size: $main-font-size;
 }
