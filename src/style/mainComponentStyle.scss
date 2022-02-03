@@ -1,8 +1,26 @@
 main {
   background-color: #ccc;
   min-height: calc(100vh - 71px);
+  font-size: 14px;
 
-  img {
-    width: 200px;
+  .movie {
+    height: 300px;
+    position: relative;
+    cursor: pointer;
+
+    &:hover .hover-div {
+      display: block;
+    }
+    .hover-div {
+      color: #f4f4f4;
+      background-color: slategray;
+      position: absolute;
+      height: 100%;
+      overflow-y: hidden;
+      display: none;
+    }
+    img {
+      width: 200px;
+    }
   }
 }
