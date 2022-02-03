@@ -1,11 +1,21 @@
 header {
   background-color: #000;
+  > div {
+    h2 {
+      color: #e50914;
+    }
 
-  h2 {
-    color: #e50914;
-  }
+    > div {
+      #search-input {
+        padding: 2px 10px;
+        background-color: whitesmoke;
+        width: 300px;
+      }
 
-  #search-input {
-    padding: 2px 10px;
+      #search-btn {
+        background-color: #e50914;
+        color: #F5F5F5;
+      }
+    }
   }
 }
