@@ -9,6 +9,7 @@
           type="text"
           placeholder="Search"
           v-model="keywordSearch"
+          @keyup.enter="$emit('search', keywordSearch)"
         />
         <button
           id="search-btn"

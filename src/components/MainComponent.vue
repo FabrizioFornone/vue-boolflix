@@ -7,7 +7,7 @@
           v-for="movie in moviesProp"
           :key="movie.id"
         >
-          <div class="hover-div py-4 px-3">
+          <div class="hover-div border border-white py-4 px-3">
             <div><strong>Titolo:</strong> {{ movie.title }}</div>
             <div>
               <strong>Titolo originale:</strong> {{ movie.original_title }}
