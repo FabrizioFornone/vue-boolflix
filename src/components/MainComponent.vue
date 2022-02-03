@@ -2,8 +2,8 @@
   <main>
     <div class="container py-4">
       <div class="row flex-wrap">
-        <div v-for="movie in moviesProp" :key="movie.id">
-          <card-box :card="moviesProp" />
+        <div class="col-2 my-2" v-for="movie in moviesProp" :key="movie.id">
+          <card-box :card="movie" />
         </div>
       </div>
     </div>
