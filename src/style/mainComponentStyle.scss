@@ -24,5 +24,9 @@ main {
     img {
       width: 200px;
     }
+    .img-not-found {
+        height: 300px;
+        object-fit: cover;
+    }
   }
 }

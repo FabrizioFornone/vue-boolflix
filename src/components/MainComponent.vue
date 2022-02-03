@@ -17,7 +17,14 @@
           </div>
           <a href="#">
             <img
-              :src="`https://www.themoviedb.org/t/p/w300_and_h450_bestv2${movie.poster_path}`"
+              v-if="movie.poster_path !== null"
+              :src="`https://www.themoviedb.org/t/p/original${movie.poster_path}`"
+              alt=""
+            />
+            <img
+              class="img-not-found"
+              v-else
+              src="https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg"
               alt=""
             />
           </a>

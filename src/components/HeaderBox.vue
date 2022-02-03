@@ -13,7 +13,7 @@
         />
         <button
           id="search-btn"
-          class="mx-4 py-1 px-2 rounded-pill"
+          class="mx-4 py-1 px-3 rounded-pill"
           @click="$emit('search', keywordSearch)"
         >
           Start!

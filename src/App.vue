@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header-box @search="callApi" />
-    <main-component :moviesProp="moviesFound"/>
+    <main-component :moviesProp="moviesFound" />
   </div>
 </template>
 
