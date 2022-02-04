@@ -3,7 +3,7 @@
     <div class="container-custom py-4">
       <div class="row flex-wrap">
         <div
-          class="col-2 my-4"
+          class="col-2 my-3"
           v-for="element in resultsProp"
           :key="element.id"
         >

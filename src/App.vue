@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-    <header-box @search="callApis" />
+    <header-box
+      @search="callApis"
+      @inputVisible="inputTrue"
+      :inputProp="inputBoolean"
+    />
     <main-component :resultsProp="sumResults" :flagsProp="flagsArray" />
   </div>
 </template>
@@ -20,9 +24,14 @@ export default {
       sumResults: [],
       api_key: "fbf42efdae098c0577337b304561e7e9",
       flagsArray: ["de", "en", "es", "fr", "it"],
+      inputBoolean: false,
     };
   },
   methods: {
+    inputTrue() {
+      this.inputBoolean = !this.inputBoolean;
+      console.log(this.inputBoolean);
+    },
     shuffleResult(array) {
       for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -59,7 +68,6 @@ export default {
         "https://api.themoviedb.org/3/movie/popular?api_key=ad1668ee1fca2cd9ebdd9b7319f4ce6c"
       )
       .then((res) => {
-        console.log(res.data.results);
         for (let i = 0; i < 6; i++) {
           this.sumResults.push(res.data.results[i]);
         }
@@ -69,7 +77,6 @@ export default {
         "https://api.themoviedb.org/3/tv/popular?api_key=ad1668ee1fca2cd9ebdd9b7319f4ce6c"
       )
       .then((res) => {
-        console.log(res.data.results);
         for (let i = 0; i < 6; i++) {
           this.sumResults.push(res.data.results[i]);
         }

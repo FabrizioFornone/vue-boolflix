@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="movie">
+    <div class="card-box">
       <div class="hover-div py-4 px-3">
         <div>
           <strong> <span class="me-1">Titolo:</span> </strong>

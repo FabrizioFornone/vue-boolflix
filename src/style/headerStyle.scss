@@ -9,6 +9,12 @@ header {
     }
 
     > div {
+      i {
+        color: $whitesmoke-color;
+        cursor: pointer;
+        font-size: 20px;
+        
+      }
       #search-input {
         padding: 2px 10px;
         background-color: $black-color;

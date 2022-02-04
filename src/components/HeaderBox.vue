@@ -4,7 +4,9 @@
       <!-- img by bealabea ;) -->
       <img class="mx-5" src="@/assets/img/boolflix.png" alt="" />
       <div>
+        <i class="fas fa-search p-1" @click="$emit('inputVisible')"></i>
         <input
+          v-if="inputProp"
           id="search-input"
           class="mx-2 px-2 rounded"
           type="text"
@@ -30,6 +32,9 @@ export default {
     return {
       keywordSearch: "",
     };
+  },
+  props: {
+    inputProp: Boolean,
   },
 };
 </script>
