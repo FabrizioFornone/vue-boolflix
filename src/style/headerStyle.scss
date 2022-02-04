@@ -4,23 +4,28 @@ header {
   background-color: $black-color;
 
   > div {
-
     img {
-        width: 90px;
+      width: 110px;
     }
 
     > div {
       #search-input {
         padding: 2px 10px;
-        background-color: $whitesmoke-color;
+        background-color: $black-color;
+        color: $whitesmoke-color;
         width: 300px;
         border-color: $grey-color;
       }
 
       #search-btn {
-        background-color: #e50914;
+        background-color: $red-color;
         color: $whitesmoke-color;
-        border-color: $grey-color;
+        border-color: $black-color;
+
+        &:hover {
+          background-color: $whitesmoke-color;
+          color: $red-color;
+        }
       }
     }
   }

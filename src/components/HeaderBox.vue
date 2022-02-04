@@ -6,18 +6,18 @@
       <div>
         <input
           id="search-input"
-          class="mx-2 py-1 px-2 rounded-pill"
+          class="mx-2 px-2 rounded"
           type="text"
-          placeholder="Search"
+          placeholder="Movies, tv series"
           v-model="keywordSearch"
           @keyup.enter="$emit('search', keywordSearch)"
         />
         <button
           id="search-btn"
-          class="mx-4 py-1 px-3 rounded-pill"
+          class="mx-4 px-3 py-1 rounded"
           @click="$emit('search', keywordSearch)"
         >
-          Start!
+          Search
         </button>
       </div>
     </div>
