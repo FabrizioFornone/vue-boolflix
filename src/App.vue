@@ -15,50 +15,40 @@ export default {
   components: { HeaderBox, MainComponent },
   data() {
     return {
+      moviesResult: [],
+      tvSeriesResult: [],
       sumResults: [],
+      api_key: "fbf42efdae098c0577337b304561e7e9",
     };
   },
   methods: {
-    destructuringAndPush(arrayToDestructured, recipientArray) {
-      const [array1, array2] = arrayToDestructured;
-      array1.forEach((element) => {
-        recipientArray.push(element);
-      });
-      array2.forEach((element) => {
-        recipientArray.push(element);
-      });
-    },
-    shuffleResult(arrayToShuffle) {
-      for (let i = arrayToShuffle.length - 1; i > 0; i--) {
+    shuffleResult(array) {
+      for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-
-        const temp = arrayToShuffle[i];
-        arrayToShuffle[i] = arrayToShuffle[j];
-        arrayToShuffle[j] = temp;
+        const temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
       }
-
-      return arrayToShuffle;
+      return array;
     },
-    callApis(keyword) {
-      if (keyword === "") {
-        this.sumResults = [];
-      } else {
-        this.sumResults = [];
-        let multiAxios = [
-          `https://api.themoviedb.org/3/search/movie/?api_key=fbf42efdae098c0577337b304561e7e9&query=${keyword}`,
-          `https://api.themoviedb.org/3/search/tv/?api_key=fbf42efdae098c0577337b304561e7e9&query=${keyword}`,
-        ];
-        let dataArray = [];
-        Promise.all(multiAxios.map((endpoint) => axios.get(endpoint))).then(
-          axios.spread((...allData) => {
-            allData.forEach((data) => {
-              dataArray.push(data.data.results);
-            });
-            this.destructuringAndPush(dataArray, this.sumResults);
-            this.shuffleResult(this.sumResults);
-          })
-        );
-      }
+    async genericCallApi(type, keyword) {
+      const params = {
+        query: keyword,
+        api_key: this.api_key,
+      };
+
+      const results = await axios
+        .get(`https://api.themoviedb.org/3/search/${type}`, { params })
+        .then((res) => {
+          return res.data.results;
+        });
+      return results;
+    },
+    async callApis(keyword) {
+      this.moviesResult = await this.genericCallApi("movie", keyword);
+      this.tvSeriesResult = await this.genericCallApi("tv", keyword);
+      this.sumResults = [...this.moviesResult, ...this.tvSeriesResult];
+      this.sumResults = this.shuffleResult(this.sumResults);
     },
   },
 };
