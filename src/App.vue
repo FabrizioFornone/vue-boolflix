@@ -46,11 +46,35 @@ export default {
       return results;
     },
     async callApis(keyword) {
+      this.sumResults = "";
       this.moviesResult = await this.genericCallApi("movie", keyword);
       this.tvSeriesResult = await this.genericCallApi("tv", keyword);
       this.sumResults = [...this.moviesResult, ...this.tvSeriesResult];
       this.sumResults = this.shuffleResult(this.sumResults);
     },
+  },
+  mounted() {
+    axios
+      .get(
+        "https://api.themoviedb.org/3/movie/popular?api_key=ad1668ee1fca2cd9ebdd9b7319f4ce6c"
+      )
+      .then((res) => {
+        console.log(res.data.results);
+        for (let i = 0; i < 6; i++) {
+          this.sumResults.push(res.data.results[i]);
+        }
+      });
+    axios
+      .get(
+        "https://api.themoviedb.org/3/tv/popular?api_key=ad1668ee1fca2cd9ebdd9b7319f4ce6c"
+      )
+      .then((res) => {
+        console.log(res.data.results);
+        for (let i = 0; i < 6; i++) {
+          this.sumResults.push(res.data.results[i]);
+        }
+        this.sumResults = this.shuffleResult(this.sumResults);
+      });
   },
 };
 </script>
