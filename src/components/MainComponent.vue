@@ -1,9 +1,9 @@
 <template>
   <main>
-    <div class="container py-4">
+    <div class="container-custom py-4">
       <div class="row flex-wrap">
         <div
-          class="col-2 my-2"
+          class="col-2 my-4"
           v-for="element in resultsProp"
           :key="element.id"
         >

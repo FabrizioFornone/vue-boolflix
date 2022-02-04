@@ -2,7 +2,7 @@
   <header>
     <div class="d-flex justify-content-between align-items-center py-3">
       <!-- img by bealabea ;) -->
-      <img class="mx-4" src="@/assets/img/boolflix.png" alt="" />
+      <img class="mx-5" src="@/assets/img/boolflix.png" alt="" />
       <div>
         <input
           id="search-input"

@@ -1,7 +1,12 @@
 @import "@/style/variabiles.scss";
 
 main {
-  background-color: $grey-color;
+  background-color: $bg-main-color;
   min-height: calc(100vh - 71px);
   font-size: $main-font-size;
+
+  .container-custom {
+    width: 1400px;
+    margin: 0 auto;
+  }
 }

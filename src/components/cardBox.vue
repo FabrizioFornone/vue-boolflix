@@ -41,12 +41,12 @@
         </div>
       </div>
       <a href="#">
-        <img
+        <img class="rounded"
           v-if="card.poster_path !== null"
           :src="`https://www.themoviedb.org/t/p/original${card.poster_path}`"
           alt=""
         />
-        <img
+        <img class="rounded"
           v-else
           src="https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg"
           alt=""

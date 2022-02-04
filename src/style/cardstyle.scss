@@ -1,7 +1,7 @@
 @import "@/style/variabiles.scss";
 
 .movie {
-  height: 300px;
+  height: 150px;
   position: relative;
   cursor: pointer;
 
@@ -10,10 +10,10 @@
   }
   .hover-div {
     color: $whitesmoke-color;
-    background-color: $slategray-color;
+    background-color: $black-trasparent-color;
     position: absolute;
     height: 100%;
-    width: 200px;
+    width: 240px;
     overflow-y: hidden;
     display: none;
 
@@ -25,11 +25,10 @@
       width: 20px;
       height: 20px;
     }
-
   }
   img {
-    width: 200px;
-    height: 300px;
+    width: 230px;
+    height: 100%;
     object-fit: cover;
   }
 }
