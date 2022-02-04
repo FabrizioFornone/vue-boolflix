@@ -1,7 +1,7 @@
 <template>
   <main>
     <div class="container-custom py-4">
-      <div class="row flex-wrap">
+      <div class="row flex-wrap mb-5">
         <div
           class="col-2 my-3"
           v-for="element in resultsProp"
