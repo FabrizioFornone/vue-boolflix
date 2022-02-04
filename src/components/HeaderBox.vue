@@ -4,9 +4,9 @@
       <!-- img by bealabea ;) -->
       <img class="mx-5" src="@/assets/img/boolflix.png" alt="" />
       <div>
-        <i class="fas fa-search p-1" @click="$emit('inputVisible')"></i>
+        <i class="fas fa-search p-1" @click="changeBoolean()"></i>
         <input
-          v-if="inputProp"
+          v-if="inputBoolean"
           id="search-input"
           class="mx-2 px-2 rounded"
           type="text"
@@ -31,10 +31,14 @@ export default {
   data() {
     return {
       keywordSearch: "",
+      inputBoolean: false,
     };
   },
-  props: {
-    inputProp: Boolean,
+  methods: {
+    changeBoolean() {
+      this.inputBoolean = !this.inputBoolean;
+      this.keywordSearch = "";
+    },
   },
 };
 </script>

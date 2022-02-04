@@ -1,10 +1,6 @@
 <template>
   <div id="app">
-    <header-box
-      @search="callApis"
-      @inputVisible="inputTrue"
-      :inputProp="inputBoolean"
-    />
+    <header-box @search="callApis" />
     <main-component :resultsProp="sumResults" :flagsProp="flagsArray" />
   </div>
 </template>
@@ -24,14 +20,9 @@ export default {
       sumResults: [],
       api_key: "fbf42efdae098c0577337b304561e7e9",
       flagsArray: ["de", "en", "es", "fr", "it"],
-      inputBoolean: false,
     };
   },
   methods: {
-    inputTrue() {
-      this.inputBoolean = !this.inputBoolean;
-      console.log(this.inputBoolean);
-    },
     shuffleResult(array) {
       for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
