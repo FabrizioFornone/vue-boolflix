@@ -2,8 +2,12 @@
   <main>
     <div class="container py-4">
       <div class="row flex-wrap">
-        <div class="col-2 my-2" v-for="element in resultsProp" :key="element.id">
-          <card-box :card="element" />
+        <div
+          class="col-2 my-2"
+          v-for="element in resultsProp"
+          :key="element.id"
+        >
+          <card-box :card="element" :flagsPropCard="flagsProp" />
         </div>
       </div>
     </div>
@@ -16,6 +20,7 @@ export default {
   components: { cardBox },
   props: {
     resultsProp: Array,
+    flagsProp: Array,
   },
 };
 </script>

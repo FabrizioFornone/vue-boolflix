@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header-box @search="callApis" />
-    <main-component :resultsProp="sumResults" />
+    <main-component :resultsProp="sumResults" :flagsProp="flagsArray" />
   </div>
 </template>
 
@@ -19,6 +19,7 @@ export default {
       tvSeriesResult: [],
       sumResults: [],
       api_key: "fbf42efdae098c0577337b304561e7e9",
+      flagsArray: ["de", "en", "es", "fr", "it"],
     };
   },
   methods: {

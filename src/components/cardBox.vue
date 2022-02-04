@@ -5,7 +5,21 @@
         <div><strong>Titolo:</strong> {{ card.title }}</div>
         <div><strong>Titolo originale:</strong> {{ card.original_title }}</div>
         <div><strong>Voto:</strong> {{ card.vote_average }}</div>
-        <div><strong>Lingua:</strong> {{ card.original_language }}</div>
+        <div>
+          <strong>Lingua:</strong>
+          <span
+            class="mx-2"
+            v-if="langCheck(flagsPropCard, card.original_language)"
+          >
+            <strong>{{ card.original_language }}</strong>
+          </span>
+          <img
+            v-else
+            class="flag mx-2"
+            :src="`/flags/${card.original_language}.png`"
+            alt=""
+          />
+        </div>
         <div><strong>Overview:</strong> {{ card.overview }}</div>
       </div>
       <a href="#">
@@ -28,6 +42,12 @@
 export default {
   props: {
     card: Object,
+    flagsPropCard: Array,
+  },
+  methods: {
+    langCheck(flag, lang) {
+      return !flag.includes(lang);
+    },
   },
 };
 </script>
