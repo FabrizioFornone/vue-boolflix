@@ -17,10 +17,15 @@
     overflow-y: hidden;
     display: none;
 
+    .star {
+      margin: 0 1px;
+    }
+
     .flag {
       width: 20px;
       height: 20px;
     }
+
   }
   img {
     width: 200px;

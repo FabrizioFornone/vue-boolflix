@@ -2,9 +2,24 @@
   <div>
     <div class="movie">
       <div class="hover-div border border-white py-4 px-3">
-        <div><strong>Titolo:</strong> {{ card.title }}</div>
-        <div><strong>Titolo originale:</strong> {{ card.original_title }}</div>
-        <div><strong>Voto:</strong> {{ card.vote_average }}</div>
+        <div>
+          <strong> <span class="me-1">Titolo:</span> </strong> {{ card.title }}
+        </div>
+        <div>
+          <strong> <span class="me-1">Titolo originale:</span> </strong>
+          <span>
+            {{ card.original_title }}
+          </span>
+        </div>
+        <div>
+          <strong> <span class="me-1">Voto:</span> </strong>
+          <span
+            class="star"
+            v-for="(star, index) in Math.round(card.vote_average / 2)"
+            :key="index"
+            >&#9733;</span
+          >
+        </div>
         <div>
           <strong>Lingua:</strong>
           <span
@@ -20,7 +35,10 @@
             alt=""
           />
         </div>
-        <div><strong>Overview:</strong> {{ card.overview }}</div>
+        <div>
+          <strong> <span class="me-1">Overview:</span> </strong>
+          <span>{{ card.overview }}</span>
+        </div>
       </div>
       <a href="#">
         <img
