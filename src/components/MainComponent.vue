@@ -7,7 +7,14 @@
           v-for="element in resultsProp"
           :key="element.id"
         >
-          <card-box :card="element" :flagsPropCard="flagsProp" />
+          <card-box
+            :card="element"
+            :flagsPropCard="flagsProp"
+            :titleProp="element.title"
+            :nameProp="element.name"
+            :originalTitleProp="element.original_title"
+            :originalNameProp="element.original_name"
+          />
         </div>
       </div>
     </div>

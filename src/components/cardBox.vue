@@ -4,13 +4,11 @@
       <div class="hover-div py-4 px-3">
         <div>
           <strong> <span class="me-1">Titolo:</span> </strong>
-          {{ card.title }}
+          {{ titleProp }} {{ nameProp }}
         </div>
         <div>
           <strong> <span class="me-1">Titolo originale:</span> </strong>
-          <span>
-            {{ card.original_title }}
-          </span>
+          <span> {{ originalTitleProp }} {{ originalNameProp }} </span>
         </div>
         <div>
           <strong> <span class="me-1">Voto:</span> </strong>
@@ -64,6 +62,10 @@ export default {
   props: {
     card: Object,
     flagsPropCard: Array,
+    titleProp: String,
+    nameProp: String,
+    originalTitleProp: String,
+    originalNameProp: String,
   },
   methods: {
     langCheck(flag, lang) {
