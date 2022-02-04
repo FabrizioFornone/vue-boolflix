@@ -1,9 +1,10 @@
 <template>
   <div>
     <div class="movie">
-      <div class="hover-div border border-white py-4 px-3">
+      <div class="hover-div py-4 px-3">
         <div>
-          <strong> <span class="me-1">Titolo:</span> </strong> {{ card.title }}
+          <strong> <span class="me-1">Titolo:</span> </strong>
+          {{ card.title }}
         </div>
         <div>
           <strong> <span class="me-1">Titolo originale:</span> </strong>
@@ -41,12 +42,14 @@
         </div>
       </div>
       <a href="#">
-        <img class="rounded"
+        <img
+          class="rounded"
           v-if="card.poster_path !== null"
           :src="`https://www.themoviedb.org/t/p/original${card.poster_path}`"
           alt=""
         />
-        <img class="rounded"
+        <img
+          class="rounded"
           v-else
           src="https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg"
           alt=""
