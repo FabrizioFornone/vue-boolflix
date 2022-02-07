@@ -4,9 +4,4 @@ main {
   background-color: $bg-main-color;
   min-height: calc(100vh - 71px);
   font-size: $main-font-size;
-
-  .container-custom {
-    width: 1400px;
-    margin: 0 auto;
-  }
 }

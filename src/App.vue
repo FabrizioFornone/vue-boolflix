@@ -23,6 +23,7 @@ export default {
     };
   },
   methods: {
+    // method for shuffling elements into an arraya
     shuffleResult(array) {
       for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -32,6 +33,7 @@ export default {
       }
       return array;
     },
+    // method to call themoviedb API
     async genericCallApi(type, keyword) {
       const params = {
         query: keyword,
@@ -53,12 +55,12 @@ export default {
         .then((res) => {
           for (let i = 0; i < 6; i++) {
             this.sumResults.push(res.data.results[i]);
-            this.sumResults = this.shuffleResult(this.sumResults);
           }
+          this.sumResults = this.shuffleResult(this.sumResults);
         });
     },
     async callApis(keyword) {
-      this.sumResults = "";
+      this.sumResults = [];
       this.moviesResult = await this.genericCallApi("movie", keyword);
       this.tvSeriesResult = await this.genericCallApi("tv", keyword);
       this.sumResults = [...this.moviesResult, ...this.tvSeriesResult];

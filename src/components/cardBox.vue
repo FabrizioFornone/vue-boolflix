@@ -1,5 +1,4 @@
 <template>
-  <div>
     <div class="card-box">
       <div class="hover-div py-4 px-3">
         <div>
@@ -49,7 +48,6 @@
         />
       </a>
     </div>
-  </div>
 </template>
 
 <script>
