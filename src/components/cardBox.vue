@@ -1,19 +1,19 @@
 <template>
     <div class="card-box">
       <div class="hover-div py-4 px-3">
-        <div>
+        <div class="py-1">
           <strong> <span class="me-1">Titolo:</span> </strong>
           {{ titleProp }} {{ nameProp }}
         </div>
-        <div>
+        <div class="py-1">
           <strong> <span class="me-1">Titolo originale:</span> </strong>
           <span> {{ originalTitleProp }} {{ originalNameProp }} </span>
         </div>
-        <div class="d-flex">
+        <div class="d-flex py-1">
           <strong> <span class="me-1">Voto:</span> </strong>
           <rating-stars :rateNumber="card.vote_average" />
         </div>
-        <div>
+        <div class="py-1">
           <strong>Lingua:</strong>
           <span
             class="mx-2"
@@ -28,7 +28,7 @@
             alt=""
           />
         </div>
-        <div>
+        <div class="py-1">
           <strong> <span class="me-1">Overview:</span> </strong>
           <span>{{ card.overview }}</span>
         </div>
