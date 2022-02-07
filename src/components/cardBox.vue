@@ -14,7 +14,7 @@
           <strong> <span class="me-1">Voto:</span> </strong>
           <span
             class="star"
-            v-for="(star, index) in Math.round(card.vote_average / 2)"
+            v-for="(star, index) in stars(card.vote_average)"
             :key="index"
             >&#9733;</span
           >
@@ -70,6 +70,9 @@ export default {
   methods: {
     langCheck(flag, lang) {
       return !flag.includes(lang);
+    },
+    stars(rate) {
+      return Math.round(rate / 2);
     },
   },
 };
