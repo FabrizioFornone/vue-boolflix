@@ -82,7 +82,7 @@ export default {
       this.sumResults = [];
       this.callAPI("tv", "popular", 12);
     },
-    // Method linked to Top Rated  button
+    // Method linked to Top Rated button
     topRated() {
       this.sumResults = [];
       this.callAPI("movie", "top_rated", 6);
