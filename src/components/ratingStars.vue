@@ -21,5 +21,6 @@ export default {
 <style lang="scss" scoped>
 .star {
   margin: 0 1px;
+  font-size: 11px;
 }
 </style>

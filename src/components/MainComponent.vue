@@ -22,9 +22,9 @@
 </template>
 
 <script>
-import cardBox from "./cardBox.vue";
+import CardBox from "./CardBox.vue";
 export default {
-  components: { cardBox },
+  components: { CardBox },
   props: {
     resultsProp: Array,
     flagsProp: Array,

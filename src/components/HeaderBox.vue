@@ -51,7 +51,7 @@
           </div>
         </nav>
       </div>
-      <div class="col-4 d-flex justify-content-end">
+      <div class="col-4 d-flex align-items-center justify-content-end">
         <!-- Search Lens -->
         <i id="lens" class="fas fa-search p-1" @click="changeBoolean()"></i>
         <!-- Search Input -->
