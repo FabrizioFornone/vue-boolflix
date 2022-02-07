@@ -1,12 +1,12 @@
 @import "@/style/variabiles.scss";
 
 .card-box {
+  margin: 0 auto;
   height: 350px;
   width: 210px;
   position: relative;
   cursor: pointer;
   transition: all 0.3s;
-  margin: 0 auto;
 
   &:hover {
     transition: all 0.3s;
@@ -24,12 +24,11 @@
   }
 
   .hover-div {
+    display: none;
+    position: absolute;
     color: $whitesmoke-color;
     background-color: $black-trasparent-color;
-    position: absolute;
-    width: 100%;
     overflow-y: auto;
-    display: none;
 
     .flag {
       width: 17px;
