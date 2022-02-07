@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header-box
-      @search="callApis"
+      @search="searchCallMethod"
       @home="homeMix"
       @movies="mostViewedMovies"
       @tvSeries="mostViewedTV"
@@ -89,7 +89,7 @@ export default {
       this.callAPI("tv", "top_rated", 6);
     },
     // Method linked to search bar and search button
-    async callApis(keyword) {
+    async searchCallMethod(keyword) {
       this.sumResults = [];
       this.moviesResult = await this.searchCallApi("movie", keyword);
       this.tvSeriesResult = await this.searchCallApi("tv", keyword);
