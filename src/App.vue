@@ -23,7 +23,7 @@ export default {
     };
   },
   methods: {
-    // method for shuffling elements into an array
+    // Method for shuffling elements into an array
     shuffleResult(array) {
       for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -33,7 +33,7 @@ export default {
       }
       return array;
     },
-    // method to call elements with a keyword from themoviedb API
+    // Method to call elements with a keyword from themoviedb API
     async genericCallApi(type, keyword) {
       const params = {
         query: keyword,
@@ -47,7 +47,7 @@ export default {
         });
       return results;
     },
-    // method to call most viewed elements from themoviedb API
+    // Method to call most viewed elements from themoviedb API
     mostViewedCallAPI(type) {
       axios
         .get(
