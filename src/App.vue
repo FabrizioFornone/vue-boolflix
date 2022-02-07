@@ -45,6 +45,18 @@ export default {
         });
       return results;
     },
+    mostViewedcallAPI(type) {
+      axios
+        .get(
+          `https://api.themoviedb.org/3/${type}/popular?api_key=ad1668ee1fca2cd9ebdd9b7319f4ce6c`
+        )
+        .then((res) => {
+          for (let i = 0; i < 6; i++) {
+            this.sumResults.push(res.data.results[i]);
+            this.sumResults = this.shuffleResult(this.sumResults);
+          }
+        });
+    },
     async callApis(keyword) {
       this.sumResults = "";
       this.moviesResult = await this.genericCallApi("movie", keyword);
@@ -54,25 +66,8 @@ export default {
     },
   },
   mounted() {
-    axios
-      .get(
-        "https://api.themoviedb.org/3/movie/popular?api_key=ad1668ee1fca2cd9ebdd9b7319f4ce6c"
-      )
-      .then((res) => {
-        for (let i = 0; i < 6; i++) {
-          this.sumResults.push(res.data.results[i]);
-        }
-      });
-    axios
-      .get(
-        "https://api.themoviedb.org/3/tv/popular?api_key=ad1668ee1fca2cd9ebdd9b7319f4ce6c"
-      )
-      .then((res) => {
-        for (let i = 0; i < 6; i++) {
-          this.sumResults.push(res.data.results[i]);
-        }
-        this.sumResults = this.shuffleResult(this.sumResults);
-      });
+    this.mostViewedcallAPI("movie");
+    this.mostViewedcallAPI("tv");
   },
 };
 </script>
