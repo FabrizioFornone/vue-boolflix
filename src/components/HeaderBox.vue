@@ -1,9 +1,47 @@
 <template>
   <header>
-    <div class="d-flex justify-content-between align-items-center py-3">
+    <div class="d-flex justify-content-between align-items-center py-2">
       <!-- img by bealabea ;) -->
-      <div class="col-6">
-        <img class="mx-5" src="@/assets/img/boolflix.png" alt="" />
+      <div class="col-6 d-flex align-items-center">
+        <div>
+          <img class="mx-5" src="@/assets/img/boolflix.png" alt="" />
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          <div class="container-fluid">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link " aria-current="page" href="#"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " href="#">Serie TV</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Originali</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Aggiunti di recente</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">La mia lista</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
       </div>
       <div class="col-6 d-flex justify-content-end">
         <i class="fas fa-search p-1" @click="changeBoolean()"></i>

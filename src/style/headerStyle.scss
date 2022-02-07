@@ -7,13 +7,22 @@ header {
     img {
       width: 110px;
     }
+    .navbar-dark .navbar-nav .nav-link {
+      color: $grey-color;
+      border: 2px solid transparent;
+      padding-bottom: 15px;
+
+      &:hover {
+        color: $whitesmoke-color;
+        border-bottom: 2px solid $whitesmoke-color;
+      }
+    }
 
     > div {
       i {
         color: $whitesmoke-color;
         cursor: pointer;
         font-size: 20px;
-        
       }
       #search-input {
         padding: 2px 10px;
