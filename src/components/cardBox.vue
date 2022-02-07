@@ -10,14 +10,9 @@
           <strong> <span class="me-1">Titolo originale:</span> </strong>
           <span> {{ originalTitleProp }} {{ originalNameProp }} </span>
         </div>
-        <div>
+        <div class="d-flex">
           <strong> <span class="me-1">Voto:</span> </strong>
-          <span
-            class="star"
-            v-for="(star, index) in stars(card.vote_average)"
-            :key="index"
-            >&#9733;</span
-          >
+          <rating-stars :rateNumber="card.vote_average" />
         </div>
         <div>
           <strong>Lingua:</strong>
@@ -58,7 +53,9 @@
 </template>
 
 <script>
+import ratingStars from "./ratingStars.vue";
 export default {
+  components: { ratingStars },
   props: {
     card: Object,
     flagsPropCard: Array,
@@ -70,9 +67,6 @@ export default {
   methods: {
     langCheck(flag, lang) {
       return !flag.includes(lang);
-    },
-    stars(rate) {
-      return Math.round(rate / 2);
     },
   },
 };
