@@ -2,9 +2,9 @@
   <header>
     <div class="d-flex justify-content-between align-items-center py-2">
       <!-- img by bealabea ;) -->
-      <div class="col-6 d-flex align-items-center">
+      <div class="col-8 d-flex align-items-center">
         <div>
-          <img class="mx-5" src="@/assets/img/boolflix.png" alt="" />
+          <img class="ms-5 me-2" src="@/assets/img/boolflix.png" alt="" />
         </div>
         <nav class="navbar navbar-expand-lg navbar-dark">
           <div class="container-fluid">
@@ -43,7 +43,7 @@
           </div>
         </nav>
       </div>
-      <div class="col-6 d-flex justify-content-end">
+      <div class="col-4 d-flex justify-content-end">
         <i class="fas fa-search p-1" @click="changeBoolean()"></i>
         <input
           v-if="inputBoolean"

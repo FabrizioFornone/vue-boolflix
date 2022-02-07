@@ -3,7 +3,7 @@
     <div class="container-fluid py-4">
       <div class="row flex-wrap mb-5">
         <div
-          class="col-6 col-md-4 col-lg-4 col-xl-2 my-3"
+          class="col-6 col-md-4 col-xxl-2 my-3"
           v-for="element in resultsProp"
           :key="element.id"
         >
