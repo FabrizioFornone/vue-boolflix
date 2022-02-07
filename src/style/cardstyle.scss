@@ -45,3 +45,20 @@
     object-fit: cover;
   }
 }
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background: #e50914;
+  border-radius: 30px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #e50914;
+}
+::-webkit-scrollbar-track {
+  background: #808080;
+  border-radius: 30px;
+  box-shadow: inset 0px 0px 3px 0px #3d3d3d;
+}
