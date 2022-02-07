@@ -4,7 +4,7 @@
       <!-- img by bealabea ;) -->
       <div class="col-8 d-flex align-items-center">
         <div>
-          <img class="ms-5 me-2" src="@/assets/img/boolflix.png" alt="" />
+          <img class="mx-2 logo" src="@/assets/img/boolflix.png" alt="" />
         </div>
         <nav class="navbar navbar-expand-lg navbar-dark">
           <div class="container-fluid">
@@ -44,7 +44,7 @@
         </nav>
       </div>
       <div class="col-4 d-flex justify-content-end">
-        <i class="fas fa-search p-1" @click="changeBoolean()"></i>
+        <i id="lens" class="fas fa-search p-1" @click="changeBoolean()"></i>
         <input
           v-if="inputBoolean"
           id="search-input"
@@ -56,7 +56,7 @@
         />
         <button
           id="search-btn"
-          class="mx-4 px-3 py-1 rounded"
+          class="mx-2 px-3 py-1 rounded"
           @click="$emit('search', keywordSearch)"
         >
           Search
