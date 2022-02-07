@@ -23,19 +23,28 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="#">Home</a>
+                  <a
+                    @click="$emit('home')"
+                    class="nav-link"
+                    aria-current="page"
+                    href="#"
+                    >Home</a
+                  >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Serie TV</a>
+                  <a @click="$emit('movies')" class="nav-link active" href="#"
+                    >Movies</a
+                  >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" href="#">Originali</a>
+                  <a @click="$emit('tvSeries')" class="nav-link" href="#"
+                    >TV Series</a
+                  >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" href="#">Aggiunti di recente</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active" href="#">La mia lista</a>
+                  <a @click="$emit('topRated')" class="nav-link active" href="#"
+                    >Top Rated</a
+                  >
                 </li>
               </ul>
             </div>

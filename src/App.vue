@@ -1,6 +1,12 @@
 <template>
   <div id="app">
-    <header-box @search="callApis" />
+    <header-box
+      @search="callApis"
+      @home="homeMix"
+      @movies="mostViewedMovies"
+      @tvSeries="mostViewedTV"
+      @topRated="topRated"
+    />
     <main-component :resultsProp="sumResults" :flagsProp="flagsArray" />
   </div>
 </template>
@@ -34,7 +40,7 @@ export default {
       return array;
     },
     // Method to call elements with a keyword from themoviedb API
-    async genericCallApi(type, keyword) {
+    async searchCallApi(type, keyword) {
       const params = {
         query: keyword,
         api_key: this.api_key,
@@ -48,30 +54,51 @@ export default {
       return results;
     },
     // Method to call most viewed elements from themoviedb API
-    mostViewedCallAPI(type) {
+    callAPI(type, criteria, n) {
       axios
         .get(
-          `https://api.themoviedb.org/3/${type}/popular?api_key=ad1668ee1fca2cd9ebdd9b7319f4ce6c`
+          `https://api.themoviedb.org/3/${type}/${criteria}?api_key=ad1668ee1fca2cd9ebdd9b7319f4ce6c`
         )
         .then((res) => {
-          for (let i = 0; i < 6; i++) {
+          for (let i = 0; i < n; i++) {
             this.sumResults.push(res.data.results[i]);
           }
           this.sumResults = this.shuffleResult(this.sumResults);
         });
     },
+    // Method linked to Home button
+    homeMix() {
+      this.sumResults = [];
+      this.callAPI("movie", "popular", 6);
+      this.callAPI("tv", "popular", 6);
+    },
+    // Method linked to Movies button
+    mostViewedMovies() {
+      this.sumResults = [];
+      this.callAPI("movie", "popular", 12);
+    },
+    // Method linked to Tv Series button
+    mostViewedTV() {
+      this.sumResults = [];
+      this.callAPI("tv", "popular", 12);
+    },
+    // Method linked to Top Rated  button
+    topRated() {
+      this.sumResults = [];
+      this.callAPI("movie", "top_rated", 6);
+      this.callAPI("tv", "top_rated", 6);
+    },
     // Method linked to search bar and search button
     async callApis(keyword) {
       this.sumResults = [];
-      this.moviesResult = await this.genericCallApi("movie", keyword);
-      this.tvSeriesResult = await this.genericCallApi("tv", keyword);
+      this.moviesResult = await this.searchCallApi("movie", keyword);
+      this.tvSeriesResult = await this.searchCallApi("tv", keyword);
       this.sumResults = [...this.moviesResult, ...this.tvSeriesResult];
       this.sumResults = this.shuffleResult(this.sumResults);
     },
   },
   mounted() {
-    this.mostViewedCallAPI("movie");
-    this.mostViewedCallAPI("tv");
+    this.homeMix();
   },
 };
 </script>
