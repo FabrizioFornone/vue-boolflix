@@ -33,7 +33,7 @@ export default {
       }
       return array;
     },
-    // method to call themoviedb API
+    // method to call elements with a keyword from themoviedb API
     async genericCallApi(type, keyword) {
       const params = {
         query: keyword,
@@ -47,7 +47,8 @@ export default {
         });
       return results;
     },
-    mostViewedcallAPI(type) {
+    // method to call most viewed elements from themoviedb API
+    mostViewedCallAPI(type) {
       axios
         .get(
           `https://api.themoviedb.org/3/${type}/popular?api_key=ad1668ee1fca2cd9ebdd9b7319f4ce6c`
@@ -59,6 +60,7 @@ export default {
           this.sumResults = this.shuffleResult(this.sumResults);
         });
     },
+    // Method linked to search bar and search button
     async callApis(keyword) {
       this.sumResults = [];
       this.moviesResult = await this.genericCallApi("movie", keyword);
@@ -68,8 +70,8 @@ export default {
     },
   },
   mounted() {
-    this.mostViewedcallAPI("movie");
-    this.mostViewedcallAPI("tv");
+    this.mostViewedCallAPI("movie");
+    this.mostViewedCallAPI("tv");
   },
 };
 </script>

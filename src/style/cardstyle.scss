@@ -1,8 +1,8 @@
 @import "@/style/variabiles.scss";
 
 .card-box {
-  height: 400px;
-  width: 240px;
+  height: 350px;
+  width: 210px;
   position: relative;
   cursor: pointer;
   transition: all 0.3s;
@@ -10,17 +10,17 @@
 
   &:hover {
     transition: all 0.3s;
-    transform: scale(1.2);
+    transform: scale(1.3);
     z-index: 999;
   }
 
   &:hover .hover-div {
     display: block;
-    height: 400px;
+    height: 100%;
   }
 
   &:hover img {
-    height: 400px;
+    height: 100%;
   }
 
   .hover-div {

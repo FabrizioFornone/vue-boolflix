@@ -1,11 +1,12 @@
 <template>
   <header>
     <div class="d-flex justify-content-between align-items-center py-2">
-      <!-- img by bealabea ;) -->
       <div class="col-8 d-flex align-items-center">
         <div>
+          <!-- img by bealabea ;) -->
           <img class="mx-2 logo" src="@/assets/img/boolflix.png" alt="" />
         </div>
+        <!-- Bootstrap Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark">
           <div class="container-fluid">
             <button
@@ -22,12 +23,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link " aria-current="page" href="#"
-                    >Home</a
-                  >
+                  <a class="nav-link" aria-current="page" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link " href="#">Serie TV</a>
+                  <a class="nav-link" href="#">Serie TV</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link active" href="#">Originali</a>
@@ -44,7 +43,9 @@
         </nav>
       </div>
       <div class="col-4 d-flex justify-content-end">
+        <!-- Search Lens -->
         <i id="lens" class="fas fa-search p-1" @click="changeBoolean()"></i>
+        <!-- Search Input -->
         <input
           v-if="inputBoolean"
           id="search-input"
@@ -54,6 +55,7 @@
           v-model="keywordSearch"
           @keyup.enter="$emit('search', keywordSearch)"
         />
+        <!-- Search Button -->
         <button
           id="search-btn"
           class="mx-2 px-3 py-1 rounded"
@@ -74,6 +76,8 @@ export default {
       inputBoolean: false,
     };
   },
+  /* Method for making the search input appear and disappear
+  thanks to the click on the search lens  */
   methods: {
     changeBoolean() {
       this.inputBoolean = !this.inputBoolean;
