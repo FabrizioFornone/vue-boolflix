@@ -7,6 +7,7 @@
           v-for="element in resultsProp"
           :key="element.id"
         >
+        <!-- Card Component -->
           <card-box
             :card="element"
             :flagsPropCard="flagsProp"
